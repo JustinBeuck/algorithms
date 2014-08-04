@@ -2,21 +2,21 @@ require 'rubygems'
 
 module ArrayUtil
   
-  def self.max
-  	val = self.first
-  	arr.each do |x|
-  		if x > val
-  			val = x
+  def self.max(array)
+  	val = array.first
+  	array.each do |x|
+  			val = x if x > val
   		end
+      val
   	end
-  end
 
   def self.middle_element(array)
+    return nil if array.length == 0
   	len = array.length 
   	if len % 2 == 1
   		return array[len/2] 
   	else
-  		return array[len/2] + array[len/2 - 1] 
+  		return (array[len/2] + array[len/2 - 1])/2.0 
   	end
   end
 
